@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Домашняя работа</title>
+    <script src="jquery-1.10.2.js"></script>
+    <script>
+
+        $(document).ready(()=>{
+            let count=2;
+            setInterval(()=>{
+                if(count==0){
+                    count=3;
+                }
+                $('.timer').html(`${count--}`);
+            },1000);
+            setInterval(()=>{
+                if($('#redLight').css('background-color')=='rgb(255, 0, 0)'){
+                    $('#greenLight').css('background-color', 'green');
+                    $('#redLight').css('background-color', 'black');
+                }
+                else{
+                    $('#redLight').css('background-color', 'red');
+                    $('#greenLight').css('background-color', 'black');
+                }
+            },3000);
+
+        });
+
+    </script>
+    <style>
+        .div{
+            border-radius: 50%;
+            border: 1px solid black;
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+        }
+
+        #redLight{
+            background-color: black;
+        }
+
+        #greenLight{
+            background-color: green;
+        }
+
+        .timer{
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+            width: 60px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div class="div" id="redLight"></div>
+    <div class="div" id="greenLight"></div>
+    <div class="timer"></div>
+</div>
+</body>
+</html>

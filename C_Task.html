@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.10.2.js"></script>
+    <style>
+        .panel{
+            width: 32%;
+            display: inline-block;
+            align-content: center;
+        }
+
+        img{
+            max-width: 100%;
+            display: block;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .info{
+            position: relative;
+            top:-40px;
+            width: 100%;
+            background-color: whitesmoke;
+            border-radius: 5px;
+            text-align: center;
+            opacity: 0;
+        }
+    </style>
+    <script>
+    $(document).ready(()=>{
+        $('img').on('mouseenter',()=>{
+            let target=event.target;
+            $(target).next().animate({opacity:1}, 1000);
+        })
+        $('img').on('mouseleave',()=>{
+            let target=event.target;
+            $(target).next().animate({opacity:0}, 1000);
+        })
+
+    })
+    </script>
+</head>
+<body>
+<div>
+    <div class="panel">
+        <img src="1.PNG" alt="pic">
+        <div class="info">bdbddbhnrfdh</div>
+    </div>
+    <div class="panel">
+        <img src="2.PNG" alt="pic">
+        <div class="info">bdbddbhnrfdh</div>
+    </div>
+    <div class="panel">
+        <img src="3.PNG" alt="pic">
+        <div class="info">bdbddbhnrfdh</div>
+    </div>
+    <div class="panel">
+        <img src="4.PNG" alt="pic">
+        <div class="info">bdbddbhnrfdh</div>
+    </div>
+    <div class="panel">
+        <img src="5.PNG" alt="pic">
+        <div class="info">bdbddbhnrfdh</div>
+    </div>
+    <div class="panel">
+        <img src="6.PNG" alt="pic">
+        <div class="info">bdbddbhnrfdh</div>
+    </div>
+</div>
+</body>
+</html>
